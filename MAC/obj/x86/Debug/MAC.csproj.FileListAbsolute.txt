@@ -1,0 +1,8 @@
+C:\Users\boyu\Dropbox\win7-vm-dev\MAC\MAC\bin\Debug\MAC.exe
+C:\Users\boyu\Dropbox\win7-vm-dev\MAC\MAC\bin\Debug\MAC.pdb
+C:\Users\boyu\Dropbox\win7-vm-dev\MAC\MAC\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\boyu\Dropbox\win7-vm-dev\MAC\MAC\obj\x86\Debug\MAC.exe
+C:\Users\boyu\Dropbox\win7-vm-dev\MAC\MAC\obj\x86\Debug\MAC.pdb
+C:\Users\boyu\Dropbox\win7-vm-dev\MAC\MAC\bin\Debug\CommandLine.dll
+C:\Users\boyu\Dropbox\win7-vm-dev\MAC\MAC\bin\Debug\CommandLine.pdb
+C:\Users\boyu\Dropbox\win7-vm-dev\MAC\MAC\bin\Debug\CommandLine.xml

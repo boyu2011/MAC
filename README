@@ -1,0 +1,8 @@
+MAC
+===
+
+Usage:
+
+MAC --create --infile *** --sha256 --key *** --outfile ***
+
+MAC --authenticate --infile *** --sha256 --key ***
