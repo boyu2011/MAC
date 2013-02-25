@@ -79,13 +79,14 @@ namespace MAC
             System.Text.ASCIIEncoding encoding = new ASCIIEncoding();
             byte[] key = encoding.GetBytes(keyString);
 
-            // create pcket
+            // create pocket which contains hash and file.
             if (isCreate)
             {
-
+                // read file.
                 FileStream inputStream = File.OpenRead(inputFile);
                 inputStream.Position = 0;
 
+                // generate MAC based on key.
                 byte [] hshValue;
                 if (isSha256)
                 {
@@ -98,10 +99,12 @@ namespace MAC
                     hshValue = myhmacsha512.ComputeHash(inputStream);
                 }
                 
+                // write MAC to pocket file.
                 inputStream.Position = 0;
                 FileStream outputStream = File.Create(outputFile);
                 outputStream.Write(hshValue, 0, hshValue.Length);
 
+                // write input file to pocket file. 
                 int bytesRead;
                 byte[] buffer = new byte[1024];
                 do
@@ -109,20 +112,18 @@ namespace MAC
                     bytesRead = inputStream.Read(buffer, 0, 1024);
                     outputStream.Write(buffer, 0, bytesRead);
                 } while (bytesRead > 0);
-
-                //myhmacsha26.Clear();
-        
             }
             // authenticate
             else
             {
                 bool ok = true;
 
+                // read packet file.
                 FileStream inputStream = File.OpenRead(inputFile);
                 inputStream.Position = 0;
 
+                // generate two MAC.
                 byte[] computedHash;
-
                 byte[] storeHash;
                 if (isSha256)
                 {
@@ -143,6 +144,7 @@ namespace MAC
                     computedHash = hmacsha512.ComputeHash(inputStream);
                 }
 
+                // compare two MAC.
                 for (int i = 0; i < storeHash.Length; i++)
                 {
                     if (computedHash[i] != storeHash[i])
